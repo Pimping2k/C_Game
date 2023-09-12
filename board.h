@@ -1,8 +1,8 @@
 #pragma once
 
-#include "point.h"
-
 struct Board {
-	int width;
-	int height;
+	int width;	//Размер поля в ширину
+	int height; //Размер поля в высоту
+
+
 };
