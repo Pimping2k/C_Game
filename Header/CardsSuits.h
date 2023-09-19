@@ -4,5 +4,5 @@
 struct CardsSuits {
 	std::string suit;
 
-	cardSuit[] = { "Бубна","Черва","Пика","Трефа" }; //Масти карт
+	cardSuit[] = { "Diamonds","Hearts","Spades","Clubs" }; //Масти карт
 };
