@@ -1,8 +1,8 @@
 #pragma once
 #include<string>
 
-struct CardsSuits {
+struct CardsSuit {
 	std::string suit;
 
-	cardSuit[] = { "Diamonds","Hearts","Spades","Clubs" }; //Масти карт
+	static std::string cardSuit[] = {"Diamonds","Hearts","Spades","Clubs"}; //Масти карт
 };
