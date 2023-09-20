@@ -1,32 +1,32 @@
 #include"Card.h"
-#include<vector>
-#include<list>
 #include<iostream>
+#include<iterator>
 
-Card(enum class NumberOfCard Number, enum class Suits CardSuit)/*, CardsSuit::isTrump isTrump*/ {
-	this->Number = Number;
-	this->CardSuit = CardSuit;
-	//this->isTrump = isTrump;
-};
 
-Card::generateTrump() {
-	//Last card from deck it`s suit is trump
+Card::Card(const int& indexOfName,const int& indexOfSuit) {
+	this->nameOfCard = cardName[indexOfName];
+	this->suitOfCard = cardSuit[indexOfSuit];
 }
 
-Card::generateDeck() {
-	tmp = Card(NumberOfCard::Six, Suits::Clubs);
-
-	for (int i = 0; i < 4; ++i) {
-		for (int j = 6; j < 14; ++j) {
-			tmp = Card(NumberOfCard::(int)j, Suits::(int)i);
-
-			Deck.push_back(tmp);
+Deck::Deck()
+{
+	for (int i = 0; i < cardName->length(); ++i) {
+		for (int j = 0; j < cardSuit->length(); ++j) {
+				Deck::getList().push_back(Card(i, j));
 		}
 	}
 }
 
-void main() {
-	cout << Deck << endl;
-}
+std::string Card::getSuitOfCard() { return this->suitOfCard; }
+std::string Card::getNameOfCard() { return this->nameOfCard; }
 
-std::vector<Card> Deck;
+std::list<Card> Deck::getList() { return this->deck; }
+
+void Deck::print() {
+	for (auto& i : deck) {
+		std::cout << i.getNameOfCard()<<i.getSuitOfCard();
+	}
+}
+//std::ostream& operator<<(std::ostream& os, Card& card) {
+//	return os << card.getNameOfCard() << " " << card.getSuitOfCard() << std::endl;
+//}

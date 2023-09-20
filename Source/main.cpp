@@ -1,5 +1,5 @@
-#include <iostream>
-#include "Card.h"
+#include"Card.h"
+#include<iostream>
 
 int main() {
 	//Вызов функции где мы будем играть в дурака с ботом
@@ -8,6 +8,13 @@ int main() {
 	//После того как кто-то победит игра останавливается, также должна быть функция тасовки колоды, для того чтобы игрокам всегда давались разные карты. cardShuffle.
 	//После этого игрокам опять выдают карты разных мастей и разных номиналов и они играют опять.
 
-		
+	Deck* myDeck = new Deck();
+	myDeck->print();
+
+	/*for (auto& i : myDeck->getList()) {
+		std::cout << i.getNameOfCard() << i.getSuitOfCard() << std::endl;
+	}*/
+
+
 	return 0;
 }

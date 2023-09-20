@@ -1,17 +1,15 @@
 #pragma once
 #include<string>
 
-struct CardsSuit {
-	//std::string suit;
+/*struct CardsSuit {
+	std::string suit;
+}*/
 
-	static std::string cardSuit[] = {"Diamonds","Hearts","Spades","Clubs"}; //Масти карт
+std::string cardSuit[] = {"Diamonds","Hearts","Spades","Clubs" }; //Масти карт*
 
-	bool isTrump;
-};
-
-enum class Suits {
+/*enum class Suits {
 	Diamonds,
 	Hearts,
 	Spades,
 	Clubs,
-};
+};*/
