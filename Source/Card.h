@@ -9,9 +9,11 @@ private:
 	bool isTrump;
 public:
 	Card(const int& indexOfName, const int& indexOfSuit, const bool& isTrump); //Card construct
+
 	std::string getNameOfCard();
 	std::string getSuitOfCard();
 	bool getIsTrump();
+
 	//friend std::ostream& operator<<(std::ostream &os,Card &card);
 };
 
@@ -22,8 +24,10 @@ class Deck {
 private:
 	std::list<Card> deck;
 public:
-	Deck();
+	Deck(); //Deck constructor
+
 	std::list<Card> getList();
+
 	void shuffleDeck(std::list<Card> deckOfCards); //shuffle deck
 	Card defineTrump(std::list<Card> shuffledDeck);//define which card is trump and it`s suit will become trump
 
