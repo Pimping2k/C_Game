@@ -68,6 +68,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PublicIncludeDirectories>C:\Users\auagf\source\repos\C_Game\Header;$(PublicIncludeDirectories)</PublicIncludeDirectories>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -98,12 +101,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="source\card.cpp" />
-    <ClCompile Include="source\main.cpp" />
+    <ClInclude Include="Header\board.h" />
+    <ClInclude Include="Header\Card.h" />
+    <ClInclude Include="Header\Deck.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\board.h" />
-    <ClInclude Include="source\Card.h" />
+    <ClCompile Include="Source\card.cpp" />
+    <ClCompile Include="Source\Deck.cpp" />
+    <ClCompile Include="Source\main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,4 +1,5 @@
-#include"Card.h"
+#include"../Header/Card.h"
+#include "../Header/Deck.h"
 #include<iostream>
 
 int main() {
@@ -8,13 +9,18 @@ int main() {
 	//ѕосле того как кто-то победит игра останавливаетс€, также должна быть функци€ тасовки колоды, дл€ того чтобы игрокам всегда давались разные карты. cardShuffle.
 	//ѕосле этого игрокам оп€ть выдают карты разных мастей и разных номиналов и они играют оп€ть.
 
-	Deck* myDeck = new Deck();
-	myDeck->print();
+	Deck myDeck;
+	myDeck.print();
+
+	myDeck.shuffle();
+	myDeck.print();
 
 	/*for (auto& i : myDeck->getList()) {
 		std::cout << i.getNameOfCard() << i.getSuitOfCard() << std::endl;
 	}*/
 
+	char c;
+	std::cin >> c;
 
 	return 0;
 }
