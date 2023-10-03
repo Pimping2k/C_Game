@@ -1,6 +1,8 @@
-#include "../Header/Deck.h"
-#include <iostream>
 #include <algorithm>
+#include <iostream>
+#include <random>
+#include "../Header/Deck.h"
+#include "../Player.h"
 
 Deck::Deck()
 {
@@ -11,16 +13,19 @@ Deck::Deck()
 	}
 }
 
-deck_t Deck::getList() { return this->deck; }
+deck_t Deck::getVector() { return this->deck; }
 
 void Deck::print() {
 	for (auto i = deck.begin(); i != deck.end(); ++i) {
-		std::cout << i->getNameOfCard()<<" "<< i->getSuitOfCard() << std::endl;
+		std::cout << i->getNameOfCard() << " " << i->getSuitOfCard() << std::endl;
 	}
 }
 
 void Deck::shuffle() {
-	std::random_shuffle(deck.begin(), deck.end());
+	std::random_device rd;
+	std::mt19937 g(rd());
+
+	std::shuffle(deck.begin(), deck.end(),g);
 }
 
 Card Deck::defineTrump() {
@@ -31,4 +36,10 @@ Card Deck::defineTrump() {
 	{
 		return Card(0, 0, false);
 	}
+}
+
+Card Deck::getCard() {
+	Card Tmp = deck.back();
+	deck.pop_back();
+	return Tmp;
 }

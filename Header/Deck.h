@@ -11,8 +11,8 @@ private:
 public:
 	Deck(); //Deck constructor
 
-	deck_t getList();
-	Card takeCard();
+	deck_t getVector();
+	Card getCard();
 	void shuffle(); //shuffle deck
 	Card defineTrump();//define which card is trump and it`s suit will become trump
 

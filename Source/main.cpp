@@ -1,6 +1,8 @@
+#include<iostream>
 #include"../Header/Card.h"
 #include "../Header/Deck.h"
-#include<iostream>
+#include "../Player.h"
+#include "../CardManager.h"
 
 int main() {
 	//Вызов функции где мы будем играть в дурака с ботом
@@ -15,6 +17,11 @@ int main() {
 	myDeck.shuffle();
 	myDeck.print();
 
+	CardManager myManager;
+
+	myManager.init();
+	std::cout << "PLAYER CARDS" << std::endl;
+	std::cout << myManager.getPlayer();
 	/*for (auto& i : myDeck->getList()) {
 		std::cout << i.getNameOfCard() << i.getSuitOfCard() << std::endl;
 	}*/

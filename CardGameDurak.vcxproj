@@ -101,11 +101,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CardManager.h" />
     <ClInclude Include="Header\board.h" />
     <ClInclude Include="Header\Card.h" />
     <ClInclude Include="Header\Deck.h" />
+    <ClInclude Include="Player.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CardManager.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Source\card.cpp" />
     <ClCompile Include="Source\Deck.cpp" />
     <ClCompile Include="Source\main.cpp" />

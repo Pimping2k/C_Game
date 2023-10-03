@@ -21,5 +21,6 @@ public:
 static const std::vector<std::string> cardName = { "Six","Seven","Eight","Nine","Ten","Jack","Queen","King","Ace" };
 static const std::vector<std::string> cardSuit = { "Diamonds","Hearts","Spades","Clubs" }; //Card suits*
 
+std::ostream& operator<<(std::ostream& out, const Card& card);
 
 //std::ostream& operator <<(std::ostream& os, const Card& card) 
