@@ -17,4 +17,5 @@ public:
 	Card defineTrump();//define which card is trump and it`s suit will become trump
 
 	void print();
+	void defineId();
 };

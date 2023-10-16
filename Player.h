@@ -12,6 +12,7 @@ public:
 	std::vector<Card> getCards() const;
 
 	void takeCard(Card card);
+	Card throwCard();
 };
 
 std::ostream& operator<<(std::ostream& out, const Player& player);

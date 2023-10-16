@@ -6,9 +6,13 @@
 
 Deck::Deck()
 {
+	/*for (int i = 0; i < cardName.size(); i++) {
+		initialIDs[cardName[i]] = id++;
+	}*/
+
 	for (int i = 0; i < cardName.size(); ++i) {
 		for (int j = 0; j < cardSuit.size(); ++j) {
-			deck.push_back(Card(i, j, false));
+			deck.push_back(Card(i, j));
 		}
 	}
 }
@@ -25,7 +29,7 @@ void Deck::shuffle() {
 	std::random_device rd;
 	std::mt19937 g(rd());
 
-	std::shuffle(deck.begin(), deck.end(),g);
+	std::shuffle(deck.begin(), deck.end(), g);
 }
 
 Card Deck::defineTrump() {
@@ -34,7 +38,7 @@ Card Deck::defineTrump() {
 	}
 	else
 	{
-		return Card(0, 0, false);
+		return Card(0, 0);
 	}
 }
 
@@ -43,3 +47,8 @@ Card Deck::getCard() {
 	deck.pop_back();
 	return Tmp;
 }
+
+//void Deck::defineId() {
+//	if (Card::Card().nameOfCard == "Six") {
+//	}
+//}

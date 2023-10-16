@@ -8,6 +8,11 @@ void Player::takeCard(Card card) {
 	playerCards.push_back(card);
 }
 
+Card Player::throwCard()
+{
+	return playerCards[0];
+}
+
 std::vector<Card> Player::getCards()const { return this->playerCards; }
 
 std::ostream& operator<<(std::ostream& out, const Player& player) {
