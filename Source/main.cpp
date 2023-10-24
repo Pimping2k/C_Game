@@ -35,7 +35,26 @@ int main() {
 		std::cout << i.getNameOfCard() << i.getSuitOfCard() << std::endl;
 	}*/
 	std::cout << "==================" << std::endl;
-	std::cout<<myManager.compare(myManager.throwCard(),Card(0,0))<<std::endl;
+	std::cout << "trump is:" << myManager.getTrump() << std::endl;
+	std::cout<<"player 1 has:" << myManager.getPlayer1().NrOfCards() << std::endl;
+	std::cout<<"player 2 has:" << myManager.getPlayer2().NrOfCards() << std::endl;
+	
+	Player& player1 = myManager.getPlayer1();
+	Player& player2 = myManager.getPlayer2();
+	Card card = player1.throwCard(2);
+
+
+	std::cout << "Player 1 throws card " << card << std::endl;
+	
+	auto result = player2.canBeat(card, myManager.getTrump());
+
+	if (result.has_value() == false) {
+		std::cout << "player 2 cant beat card " << card << std::endl;
+	}
+	else {
+		std::cout << "player 2 can beat card " << card << " with " << *result << std::endl;
+	}
+
 
 	char c;
 	std::cin >> c;

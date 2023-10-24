@@ -1,5 +1,5 @@
 #pragma once
-#include<string>
+#include <string>
 #include <vector>
 #include <map>
 
@@ -21,6 +21,7 @@ public:
 	std::string getNameOfCard() const;
 	std::string getSuitOfCard() const;
 
+	bool CanBeat(const Card& card, std::string trump) const;
 	//friend std::ostream& operator<<(std::ostream &os,Card &card);
 };
 
@@ -30,5 +31,5 @@ extern const  std::vector<std::string> cardSuit;
 extern const  std::map<SuitType, std::string> suits;
 
 std::ostream& operator<<(std::ostream& out, const Card& card);
-
+bool operator==(const Card & left, const Card& right);
 //std::ostream& operator <<(std::ostream& os, const Card& card) 

@@ -8,9 +8,9 @@ void Player::takeCard(Card card) {
 	playerCards.push_back(card);
 }
 
-Card Player::throwCard()
+Card Player::throwCard(int index)
 {
-	return playerCards[0];
+	return playerCards[index];
 }
 
 std::vector<Card> Player::getCards()const { return this->playerCards; }
@@ -21,3 +21,22 @@ std::ostream& operator<<(std::ostream& out, const Player& player) {
 	}
 	return out;
 }
+
+int Player::NrOfCards() const {
+	return playerCards.size();
+}
+
+std::optional<Card> Player::canBeat(const Card& card, std::string trump) {
+	std::optional<Card> result;
+
+	for (auto c : playerCards) {
+		if (c.CanBeat(card, trump)) {
+			result = c;
+			return result;
+		}
+	}
+	return result;
+}
+
+//Выбрать какую карту кинуть
+//А потом удалить еёconstz

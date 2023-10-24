@@ -12,8 +12,9 @@ public:
 	CardManager();
 	void init();
 	void start();
-	const Player& getPlayer1() const;
-	const Player& getPlayer2() const;
-	Card compare(const Card&, const Card&) const;
+	Player& getPlayer1();
+	Player& getPlayer2();
+	// Card compare(const Card&, const Card&) const;
 	Card throwCard();
+	std::string getTrump() const;
 };

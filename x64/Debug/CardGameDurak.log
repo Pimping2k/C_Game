@@ -1,5 +1,2 @@
-﻿  CardManager.cpp
-  main.cpp
-  Создание кода...
-C:\Users\auagf\source\repos\C_Game\CardManager.cpp(42): warning C4715: CardManager::compare: значение возвращается не при всех путях выполнения
+﻿  card.cpp
   CardGameDurak.vcxproj -> C:\Users\auagf\source\repos\C_Game\x64\Debug\CardGameDurak.exe
