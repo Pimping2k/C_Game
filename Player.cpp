@@ -4,13 +4,21 @@
 Player::Player() {
 }
 
-void Player::takeCard(Card card) {
-	playerCards.push_back(card);
-}
-
-Card Player::throwCard(int index)
+Card Player::showCard(int index) const
 {
 	return playerCards[index];
+}
+
+Card Player::dropCard(Card card) {
+	auto it = std::find(playerCards.begin(), playerCards.end(), card);
+	if (it == playerCards.end())
+		throw new std::exception("Unknown Card");
+	playerCards.erase(it);
+	return card;
+}
+
+void Player::takeCard(Card card) {
+	playerCards.push_back(card);
 }
 
 std::vector<Card> Player::getCards()const { return this->playerCards; }

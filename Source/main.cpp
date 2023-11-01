@@ -3,6 +3,7 @@
 #include "../Header/Deck.h"
 #include "../Player.h"
 #include "../CardManager.h"
+#include <windows.h>
 
 int main() {
 	//¬ызов функции где мы будем играть в дурака с ботом
@@ -10,12 +11,6 @@ int main() {
 	//«а ход можно кинуть только одну карту, затем ход переходит боту, он может отбивать если у него одинакова€ масть(и карта номиналом выше) или козырь
 	//ѕосле того как кто-то победит игра останавливаетс€, также должна быть функци€ тасовки колоды, дл€ того чтобы игрокам всегда давались разные карты. cardShuffle.
 	//ѕосле этого игрокам оп€ть выдают карты разных мастей и разных номиналов и они играют оп€ть.
-
-	/*for (int i = 0; i < 9; i++) {
-		if (cardName[i] == "Six") {
-			Card().getIdOfCard() = 6;
-		}
-	}*/
 
 	Deck myDeck;
 	myDeck.print();
@@ -36,25 +31,73 @@ int main() {
 	}*/
 	std::cout << "==================" << std::endl;
 	std::cout << "trump is:" << myManager.getTrump() << std::endl;
-	std::cout<<"player 1 has:" << myManager.getPlayer1().NrOfCards() << std::endl;
-	std::cout<<"player 2 has:" << myManager.getPlayer2().NrOfCards() << std::endl;
-	
+
 	Player& player1 = myManager.getPlayer1();
 	Player& player2 = myManager.getPlayer2();
-	Card card = player1.throwCard(2);
+	int NrCard;
 
+	while (player1.NrOfCards() >= 1 || player2.NrOfCards() >= 1)
+	{
+		std::cout << "Player 1 has:" << player1.NrOfCards() << std::endl;
+		std::cout << "Player 2 has:" << player2.NrOfCards() << std::endl;
 
-	std::cout << "Player 1 throws card " << card << std::endl;
-	
-	auto result = player2.canBeat(card, myManager.getTrump());
+		std::cout << "Choose 1 of " << player1.NrOfCards() << std::endl;
+		std::cin >> NrCard;
+		Card card = player1.showCard(NrCard - 1);
+		std::cout << "Player 1 throws card - " << card << std::endl;
 
-	if (result.has_value() == false) {
-		std::cout << "player 2 cant beat card " << card << std::endl;
+		auto result = player2.canBeat(card, myManager.getTrump());
+
+		if (result.has_value() == false) {
+			std::cout << "PLAYER 2 CANT BEAT - " << card << std::endl;
+			player2.takeCard(card);									//Player 2 beret kartu kotoruyu ne otbil
+			player1.dropCard(card);									//player 1 udalyaet ee iz svoego vectora
+			if (player1.NrOfCards() < 6) {
+				if (myDeck.getVector().size() > 0) {
+					player1.takeCard(myDeck.getCard());				//player 1 beret kartu iz kolodi
+				}
+			}
+		}
+
+		else {
+			std::cout << "PLAYER 2 CAN BEAT - " << card << " with " << *result << std::endl;
+			player1.dropCard(card);									//player 1 udalyaet karut kotoruyu otbili
+
+			if (player1.NrOfCards() < 6) {
+				if (myDeck.getVector().size() > 0) {
+					player1.takeCard(myDeck.getCard());				//player 1 beret kartu iz kolodi
+				}
+			}
+			player2.dropCard(result.value());						//player 2 udalyaet kartu kotoroy otbilsya
+
+			if (player2.NrOfCards() < 6) {
+				if (myDeck.getVector().size() > 0) {
+					player2.takeCard(myDeck.getCard());				//player 2 toje beret kartu iz kolodi
+				}
+			}
+		}
+
+		if (player1.NrOfCards() == 0) {
+			std::cout << "=====WINNER IS PLAYER 1=====" << std::endl;
+			char c;
+			std::cin >> c;
+			return 0;
+		}
+
+		if (player2.NrOfCards() == 0) {
+			std::cout << "=====WINNER IS PLAYER 2=====" << std::endl;
+			char c;
+			std::cin >> c;
+			return 0;
+		}
+
+		if (player1.NrOfCards() == 0 && player2.NrOfCards() == 0) {
+			std::cout << "=====IT`S TIE=====" << std::endl; char c;
+			std::cin >> c;
+			return 0;
+		}
+
 	}
-	else {
-		std::cout << "player 2 can beat card " << card << " with " << *result << std::endl;
-	}
-
 
 	char c;
 	std::cin >> c;

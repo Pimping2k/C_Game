@@ -18,9 +18,9 @@ void CardManager::start() {
 
 };
 
-Card CardManager::throwCard() {
-	return this->Deck.getCard();
-}
+//Card CardManager::throwCard() {
+//	return this->Deck.getCard();
+//}
 
 std::string CardManager::getTrump() const{
 	return trump;

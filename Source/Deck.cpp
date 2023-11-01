@@ -6,10 +6,6 @@
 
 Deck::Deck()
 {
-	/*for (int i = 0; i < cardName.size(); i++) {
-		initialIDs[cardName[i]] = id++;
-	}*/
-
 	for (int i = 0; i < cardName.size(); ++i) {
 		for (int j = 0; j < cardSuit.size(); ++j) {
 			deck.push_back(Card(i, j));
