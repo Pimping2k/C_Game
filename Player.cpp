@@ -2,6 +2,12 @@
 #include "Header/Deck.h"
 
 Player::Player() {
+	name = "Jora";
+}
+
+Player::Player(const Player& player) {
+	this->name = player.name;
+	this->playerCards = player.playerCards;
 }
 
 Card Player::showCard(int index) const
@@ -24,7 +30,7 @@ void Player::takeCard(Card card) {
 std::vector<Card> Player::getCards()const { return this->playerCards; }
 
 std::ostream& operator<<(std::ostream& out, const Player& player) {
-	for (auto a : player.getCards()) {
+	for (const auto &a : player.getCards()) {
 		out << a;
 	}
 	return out;
@@ -37,7 +43,7 @@ int Player::NrOfCards() const {
 std::optional<Card> Player::canBeat(const Card& card, std::string trump) {
 	std::optional<Card> result;
 
-	for (auto c : playerCards) {
+	for (const auto &c : playerCards) {
 		if (c.CanBeat(card, trump)) {
 			result = c;
 			return result;
@@ -46,5 +52,8 @@ std::optional<Card> Player::canBeat(const Card& card, std::string trump) {
 	return result;
 }
 
-//Выбрать какую карту кинуть
-//А потом удалить еёconstz
+Player& Player::operator=(const Player& other) {
+	name = other.name;
+	playerCards = other.playerCards;
+	return *this;
+}

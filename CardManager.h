@@ -6,14 +6,14 @@
 #include"Header/Deck.h"
 #include "Player.h"
 #include "Header/Card.h"
+const int NRPLAYERS = 2;
 
 /**
  * @brief Class which representing Card Manager which has logic of the game
 */
 class CardManager {
 	Deck Deck;
-	Player player1;
-	Player player2;
+	Player player[NRPLAYERS];
 	std::string trump;
 public:
 	CardManager();
@@ -37,13 +37,10 @@ public:
 	 */
 	Player& getPlayer2();
 
-
 	/**
 	 * Method which returning trump
 	 */
 	std::string getTrump() const;
-
-
 
 	// Card compare(const Card&, const Card&) const;
 	//Card throwCard();

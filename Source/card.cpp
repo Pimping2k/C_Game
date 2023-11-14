@@ -51,8 +51,8 @@ bool Card::CanBeat(const Card& card,std::string trump) const {
 	int left_value = initialIDs.at(this->getNameOfCard()) + ((this->getSuitOfCard() == trump) ? 100 : 0);
 	int right_value = initialIDs.at(card.getNameOfCard()) + ((card.getSuitOfCard() == trump) ? 100 : 0);
 
-	std::cout << "[debug] current = " << this->getNameOfCard() << " " << this->getSuitOfCard() << std::endl;
-	std::cout << "[debug] left = " << left_value << ", right = " << right_value << std::endl;
+	//std::cout << "[debug] current = " << this->getNameOfCard() << " " << this->getSuitOfCard() << std::endl;
+	//std::cout << "[debug] left = " << left_value << ", right = " << right_value << std::endl;
 
 	return left_value > right_value;
 }

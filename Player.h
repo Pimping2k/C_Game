@@ -8,16 +8,15 @@
 #include "../C_Game/Header/Card.h"
 #include <optional>
 
-/**
- * @brief Class for represeting player and his properties
- */
+ /**
+  * @brief Class for represeting player and his properties
+  */
 class Player {
 	std::vector<Card>  playerCards;
 public:
-	int amount;
-
 	Player();
-	Player(Player& a);
+	Player(const Player& player);
+	std::string name;
 	std::vector<Card> getCards() const;
 
 	/**
@@ -54,6 +53,8 @@ public:
 	 * @param Card card
 	 */
 	void takeCard(Card card);
+
+	Player& operator=(const Player& other);
 };
 
 std::ostream& operator<<(std::ostream& out, const Player& player);
