@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header\board.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Header\Card.h">
       <Filter>Header Files</Filter>
     </ClInclude>

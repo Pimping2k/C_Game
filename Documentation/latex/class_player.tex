@@ -1,0 +1,122 @@
+\doxysection{Player Class Reference}
+\hypertarget{class_player}{}\label{class_player}\index{Player@{Player}}
+
+
+Class for represeting player and his properties.  
+
+
+
+
+{\ttfamily \#include $<$Player.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_player_a3e443ef3b46fced68aa9145d45f87eeb}\label{class_player_a3e443ef3b46fced68aa9145d45f87eeb} 
+{\bfseries Player} (const \mbox{\hyperlink{class_player}{Player}} \&player)
+\item 
+\Hypertarget{class_player_ab20d42eb053fc8eb04010e3e0daacfc5}\label{class_player_ab20d42eb053fc8eb04010e3e0daacfc5} 
+std\+::vector$<$ Card $>$ {\bfseries get\+Cards} () const
+\item 
+Card \mbox{\hyperlink{class_player_aa636024c1de6f1b07c06297ea7acf9dc}{show\+Card}} (int index) const
+\item 
+int \mbox{\hyperlink{class_player_a393c8d9f3c29cfa3749cad5e4639a10a}{Nr\+Of\+Cards}} () const
+\item 
+std\+::optional$<$ Card $>$ \mbox{\hyperlink{class_player_ae1ff36d624c532f0a04de7c9f405bad1}{can\+Beat}} (const Card \&card, std\+::string trump)
+\item 
+Card \mbox{\hyperlink{class_player_a504f2e91b89e3e661db4c2aa764bf0a2}{drop\+Card}} (Card card)
+\item 
+void \mbox{\hyperlink{class_player_a673137f48eb75e2a043974c3fb3a4945}{take\+Card}} (Card card)
+\item 
+\Hypertarget{class_player_a36425d47a907d6fbf6d5b7b58bec5e77}\label{class_player_a36425d47a907d6fbf6d5b7b58bec5e77} 
+\mbox{\hyperlink{class_player}{Player}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_player}{Player}} \&other)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_player_af9c920fabaafdeb7961a645315b521ff}\label{class_player_af9c920fabaafdeb7961a645315b521ff} 
+std\+::string {\bfseries name}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for represeting player and his properties. 
+
+\begin{DoxyAuthor}{Author}
+Savastin Andrei DJ2203 {\itshape }-\/mail -\/ \href{mailto:andrey.savastin@mail.ru}{\texttt{ andrey.\+savastin@mail.\+ru}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_player_ae1ff36d624c532f0a04de7c9f405bad1}\label{class_player_ae1ff36d624c532f0a04de7c9f405bad1} 
+\index{Player@{Player}!canBeat@{canBeat}}
+\index{canBeat@{canBeat}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{canBeat()}{canBeat()}}
+{\footnotesize\ttfamily std\+::optional$<$ Card $>$ Player\+::can\+Beat (\begin{DoxyParamCaption}\item[{const Card \&}]{card,  }\item[{std\+::string}]{trump }\end{DoxyParamCaption})}
+
+Function with logic of game between 2 players 
+\begin{DoxyParams}{Parameters}
+{\em Card\&} & card -\/ set the card \\
+\hline
+{\em string} & trump -\/ set the trump of cards suits \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+card 
+
+true/false 
+\end{DoxyReturn}
+\Hypertarget{class_player_a504f2e91b89e3e661db4c2aa764bf0a2}\label{class_player_a504f2e91b89e3e661db4c2aa764bf0a2} 
+\index{Player@{Player}!dropCard@{dropCard}}
+\index{dropCard@{dropCard}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{dropCard()}{dropCard()}}
+{\footnotesize\ttfamily Card Player\+::drop\+Card (\begin{DoxyParamCaption}\item[{Card}]{card }\end{DoxyParamCaption})}
+
+Method which droping one of player cards and erasing it 
+\begin{DoxyParams}{Parameters}
+{\em Card} & card \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+card 
+\end{DoxyReturn}
+\Hypertarget{class_player_a393c8d9f3c29cfa3749cad5e4639a10a}\label{class_player_a393c8d9f3c29cfa3749cad5e4639a10a} 
+\index{Player@{Player}!NrOfCards@{NrOfCards}}
+\index{NrOfCards@{NrOfCards}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{NrOfCards()}{NrOfCards()}}
+{\footnotesize\ttfamily int Player\+::\+Nr\+Of\+Cards (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Function which show number of player cards \begin{DoxyReturn}{Returns}
+player\+Cards.\+size() 
+\end{DoxyReturn}
+\Hypertarget{class_player_aa636024c1de6f1b07c06297ea7acf9dc}\label{class_player_aa636024c1de6f1b07c06297ea7acf9dc} 
+\index{Player@{Player}!showCard@{showCard}}
+\index{showCard@{showCard}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{showCard()}{showCard()}}
+{\footnotesize\ttfamily Card Player\+::show\+Card (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+Show card with index 
+\begin{DoxyParams}{Parameters}
+{\em int} & index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Card 
+\end{DoxyReturn}
+\Hypertarget{class_player_a673137f48eb75e2a043974c3fb3a4945}\label{class_player_a673137f48eb75e2a043974c3fb3a4945} 
+\index{Player@{Player}!takeCard@{takeCard}}
+\index{takeCard@{takeCard}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{takeCard()}{takeCard()}}
+{\footnotesize\ttfamily void Player\+::take\+Card (\begin{DoxyParamCaption}\item[{Card}]{card }\end{DoxyParamCaption})}
+
+Method which giving for player deck one card 
+\begin{DoxyParams}{Parameters}
+{\em Card} & card \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/auagf/source/repos/\+C\+\_\+\+Game/Player.\+h\item 
+C\+:/\+Users/auagf/source/repos/\+C\+\_\+\+Game/Player.\+cpp\end{DoxyCompactItemize}

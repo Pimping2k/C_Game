@@ -1,0 +1,33 @@
+\doxysection{C\+:/\+Users/auagf/source/repos/\+C\+\_\+\+Game/\+Player.h}
+\hypertarget{_player_8h_source}{}\label{_player_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}../C\_Game/Header/Card.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ std::vector<Card>\ \ playerCards;}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}();}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_player}{Player}}\&\ player);}
+\DoxyCodeLine{00019\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00020\ \ \ \ \ std::vector<Card>\ getCards()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00027\ \ \ \ \ Card\ \mbox{\hyperlink{class_player_aa636024c1de6f1b07c06297ea7acf9dc}{showCard}}(\textcolor{keywordtype}{int}\ index)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_player_a393c8d9f3c29cfa3749cad5e4639a10a}{NrOfCards}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00042\ \ \ \ \ std::optional<Card>\ \mbox{\hyperlink{class_player_ae1ff36d624c532f0a04de7c9f405bad1}{canBeat}}(\textcolor{keyword}{const}\ Card\&\ card,\ std::string\ trump);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \ \ \ \ Card\ \mbox{\hyperlink{class_player_a504f2e91b89e3e661db4c2aa764bf0a2}{dropCard}}(Card\ card);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a673137f48eb75e2a043974c3fb3a4945}{takeCard}}(Card\ card);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_player}{Player}}\&\ other);}
+\DoxyCodeLine{00058\ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ std::ostream\&\ operator<<(std::ostream\&\ out,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_player}{Player}}\&\ player);}
+
+\end{DoxyCode}
