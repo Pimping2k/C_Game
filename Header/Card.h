@@ -51,6 +51,6 @@ extern const  std::vector<std::string> cardSuit;
 extern const  std::map<SuitType, std::string> suits;
 
 std::ostream& operator<<(std::ostream& out, const Card& card);		//overloading of ostream operator
-bool operator==(const Card & left, const Card& right);				//overloading of equal operator
+bool operator==(const Card& left, const Card& right);				//overloading of equal operator
 
 //std::ostream& operator <<(std::ostream& os, const Card& card) 

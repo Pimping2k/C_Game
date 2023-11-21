@@ -1,2 +1,8 @@
-﻿  main.cpp
+﻿  CardManager.cpp
+  Player.cpp
+  Deck.cpp
+  card.cpp
+  main.cpp
+  Создание кода...
+  LINK : не найден или не выполнена сборка C:\Users\auagf\source\repos\C_Game\x64\Debug\CardGameDurak.exe при последней инкрементной компоновке; выполняется полная компоновка
   CardGameDurak.vcxproj -> C:\Users\auagf\source\repos\C_Game\x64\Debug\CardGameDurak.exe

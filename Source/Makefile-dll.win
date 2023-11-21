@@ -1,0 +1,35 @@
+CC = g++
+CXXF = -std=c++20
+LDF = -lstdc++
+
+all: Builder
+
+Builder: main.o card.dll Deck.dll Player.dll CardManager.dll
+	$(CC) -o Builder $(LDF)
+
+card.dll: card.o
+	$(CC) -shared -o card.dll card.o
+
+CardManager.dll: CardManager.o
+	$(CC) -shared -o CardManager.dll Deck.o card.o Player.o CardManager.o
+
+Deck.dll: Deck.o card.o
+	$(CC) -shared -o Deck.dll Deck.o card.o
+
+Player.dll: Player.o
+	$(CC) -shared -o Player.dll card.o Player.o
+
+main.o: main.cpp
+	$(CC) -c main.cpp $(CXXF)
+
+card.o: card.cpp
+	$(CC) -c card.cpp $(CXXF)
+
+CardManager.o: ../CardManager.cpp
+	$(CC) -c ../CardManager.cpp $(CXXF)
+
+Deck.o: Deck.cpp
+	$(CC) -c Deck.cpp $(CXXF)
+
+Player.o: ../Player.cpp
+	$(CC) -c ../Player.cpp $(CXXF)

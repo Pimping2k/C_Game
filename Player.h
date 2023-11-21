@@ -7,6 +7,7 @@
 #include <iostream>
 #include "../C_Game/Header/Card.h"
 #include <optional>
+#include <algorithm>
 
  /**
   * @brief Class for represeting player and his properties

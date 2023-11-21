@@ -1,5 +1,5 @@
 #include "Player.h"
-#include "Header/Deck.h"
+#include "../C_Game/Header/Card.h"
 
 Player::Player() {
 	name = "Jora";
@@ -16,9 +16,11 @@ Card Player::showCard(int index) const
 }
 
 Card Player::dropCard(Card card) {
+
 	auto it = std::find(playerCards.begin(), playerCards.end(), card);
-	if (it == playerCards.end())
-		throw new std::exception("Unknown Card");
+
+	//if (it == playerCards.end())
+		//throw new std::exception("Unknown Card");
 	playerCards.erase(it);
 	return card;
 }
