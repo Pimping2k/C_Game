@@ -1,10 +1,5 @@
-# Andrei_Savastin_DJ2203
-Я сделал карточную игру "Дурак"
-Где есть 2 игрока, у каждого изначально по 6 карт. Есть колода из 36 карт в которой номинал карт от 6 до Туза и 4 масти - ♥♦♣♠.
+I made a card game "Fool" Where there are 2 players, each initially having 6 cards. There is a deck of 36 cards in which the card values ​​are from 6 to Ace and 4 suits - ♥♦♣♠.
 
-У каждого из игроков есть вариант может он отбить карту или нет, если игрок может отбить карту которую ему кинул соперник, то ход переходит ему.
-Ход можно совершать исключительно 1 картой.
-Победителем является тот игрок который первый скинул последнюю свою карту.
+Each player has the option of whether he can return the card or not; if the player can return the card that the opponent threw to him, then the turn goes to him. A move can only be made with 1 card. The winner is the player who first discarded his last card.
 
-У игроков есть имена, чтобы наглядно было видно кто из них кидает карту.
-Фактически мы играем за обоих игроков.
+The players have names so that it is clearly visible which of them throws the card. In fact, we play for both players.
