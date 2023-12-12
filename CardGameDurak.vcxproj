@@ -104,20 +104,22 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>Header</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="CardManager.h" />
     <ClInclude Include="Header\Card.h" />
+    <ClInclude Include="Header\CardManager.h" />
+    <ClInclude Include="Header\CardsNumber.h" />
     <ClInclude Include="Header\Deck.h" />
-    <ClInclude Include="Player.h" />
+    <ClInclude Include="Header\Player.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CardManager.cpp" />
-    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Source\card.cpp" />
+    <ClCompile Include="Source\CardManager.cpp" />
     <ClCompile Include="Source\Deck.cpp" />
     <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\Player.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,8 +1,8 @@
 #include<iostream>
-#include"../Header/Card.h"
-#include "../Header/Deck.h"
-#include "../Player.h"
-#include "../CardManager.h"
+#include "Card.h"
+#include "Deck.h"
+#include "Player.h"
+#include "CardManager.h"
 #include <windows.h>
 #include <algorithm>
 

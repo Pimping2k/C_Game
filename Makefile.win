@@ -1,0 +1,36 @@
+CC = g++
+CXXF = -std=c++20 -IHeader
+LDF = -L. -lstdc++
+
+SRCDIR=Source
+
+all: Builder
+Builder: main.o libcard.a libDeck.a Player.dll libCardManager.a
+	 $(CC) main.o Player.dll -o Builder $(LDF) -lcard -lDeck -lCardManager
+
+main.o: $(SRCDIR)/main.cpp
+	$(CC) -c $(SRCDIR)/main.cpp $(CXXF)
+
+card.o: $(SRCDIR)/card.cpp
+	$(CC) -c $(SRCDIR)/card.cpp $(CXXF)
+	
+libcard.a: card.o
+	ar rvs libcard.a card.o
+
+Deck.o: $(SRCDIR)/Deck.cpp
+	$(CC) -c $(SRCDIR)/Deck.cpp $(CXXF)
+	
+libDeck.a: Deck.o
+	ar rvs libDeck.a Deck.o
+	
+Player.o: $(SRCDIR)/Player.cpp
+	$(CC) -c $(SRCDIR)/Player.cpp $(CXXF)
+	
+Player.dll: Player.o card.o
+	$(CC) Player.o card.o -o player.dll -shared
+	
+CardManager.o: $(SRCDIR)/CardManager.cpp
+	$(CC) -c $(SRCDIR)/CardManager.cpp $(CXXF)
+	
+libCardManager.a: CardManager.o
+	ar rvs libCardManager.a CardManager.o

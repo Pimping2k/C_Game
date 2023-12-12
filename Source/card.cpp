@@ -1,6 +1,7 @@
-#include<iostream>
-#include<random>
-#include "../Header/Card.h"
+#include <iostream>
+#include <random>
+#include <map>
+#include "Card.h"
 
 //const std::string cardName[] = { "Six","Seven","Eight","Nine","Ten","Jack","Queen","King","Ace" };
 //const std::string cardSuit[] = { "Diamonds","Hearts","Spades","Clubs" }; //Card suits*

@@ -5,7 +5,7 @@
  */
 #include <vector>
 #include <iostream>
-#include "../C_Game/Header/Card.h"
+#include "Card.h"
 #include <optional>
 
  /**

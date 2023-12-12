@@ -1,8 +1,8 @@
 #include <algorithm>
 #include <iostream>
 #include <random>
-#include "../Header/Deck.h"
-#include "../Player.h"
+#include "Deck.h"
+#include "Player.h"
 
 Deck::Deck()
 {

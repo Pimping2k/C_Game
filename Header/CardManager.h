@@ -3,9 +3,9 @@
  * @author Savastin Andrei DJ2203
  * @e-mail - andrey.savastin@mail.ru
  */
-#include"Header/Deck.h"
+#include"Deck.h"
 #include "Player.h"
-#include "Header/Card.h"
+#include "Card.h"
 const int NRPLAYERS = 2;
 
 /**
